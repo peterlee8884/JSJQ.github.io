@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS vs. JQ</title>
+  <!-- 連結JQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <h3>JavaScript</h3>
+  <p id="jstext"></p>
+  <p id="jsshow">
+    顯示/隱藏JavaScript
+  </p>
+  <button onclick="jsShow()">顯示</button>
+  <button onclick="jsHide()">隱藏</button>
+  <button onclick="popup()">跳出視窗</button>
+  <hr>
+  <h3>JQuery</h3>
+    <p id="jqtext"></p>
+    <p id="jqshow">
+        顯示／隱藏JQuery
+    </p>
+    <button id="jqopen">顯示</button>
+    <button id="jqclose">隱藏</button>
+    <button id="jqpopup">跳出視窗</button>
+  <script>
+    // JavaScript
+    document.getElementById("jstext").innerHTML = "這裡是JavaScript文字"
+    document.getElementById("jstext").style.fontSize = "35px";
+    function jsShow() {
+        document.getElementById("jsshow").style.visibility = "initial";
+    }
+    function jsHide() {
+        document.getElementById("jsshow").style.visibility = "hidden";
+    }
+    // 跳出視窗
+    function popup(){
+      alert("JavaScript跳出視窗")
+    }
+
+    // JQuery
+    $("#jqtext").html("這裡是JQuery文字");
+    $("#jqtext").css("font-size", "35px");
+    $("#jqopen").click(function() {
+       $("#jqshow").show();
+    });
+    $("#jqclose").click(function() {
+       $("#jqshow").hide("slow");
+    });
+    // 跳出視窗
+    $("#jqpopup").click(function(){
+       alert("JQuery跳出視窗")
+    });
+</script>
+</body>
+</html>
